@@ -3,16 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ContentfulService } from './contentful.service';
+import { FlightsListComponent } from './flights-list/flights-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FlightsListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ContentfulService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

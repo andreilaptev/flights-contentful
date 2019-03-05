@@ -1,0 +1,36 @@
+body {
+   background: bisque;
+
+}
+ul li {
+    background: #EBF3F9;  
+    margin-top: 10px;  
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 5px;
+    margin-right: 30px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+ul li:hover {
+    background: #F0F0DC;
+    border: 1px solid #8A97DC;
+   
+}
+.u-listReset li {
+    list-style-type: none;
+}
+
+.container-item-details{
+    display: grid;
+    //grid-template-columns: 15% auto;
+    grid-template-columns: 4 auto;
+}
+.btn-success {
+    margin: 10px 0;
+    width: 90%;
+}
+.btn-success:hover {
+    background: lightgreen;
+    color: black;
+}
