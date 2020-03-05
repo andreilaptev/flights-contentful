@@ -1,7 +1,7 @@
 <div class="container">
   <div class="container-item">
     <ul class="u-listReset">
-      <li *ngFor="let flight of flights">
+      <li *ngFor="let flight of x">
           <strong> Flight Number: </strong> {{ flight.fields.flightNumber }}
        <br>
       <strong> Departure City: </strong>  {{ flight.fields.departure }} <strong> Departure Date: </strong> {{ flight.fields.departureDate | date}}
@@ -11,9 +11,11 @@
     <strong> Aiplane Model: </strong> {{flight.fields.aircraftModel}}
     <br>
     <strong> Ticket Price: </strong> {{flight.fields.price}}
-        <img src="{{ flight.fields.craftPicture.fields}}" >
+        <img src="{{ flight.fields.craftPicture}}" >
         <br>
-        <button class="btn btn-success"> Book </button>
+        Text: {{flight.fields.testText}}
+        <br>
+        <button class="btn btn-success" (click)="onClick()"> Book </button>
       </li>
     </ul>
   </div>

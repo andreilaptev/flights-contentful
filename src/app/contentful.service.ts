@@ -25,4 +25,10 @@ export class ContentfulService {
     }, query))
     .then(res => res.items);
   }
+  getBlogs(query?: object): Promise<Entry<any>[]> {
+    return this.cdaClient.getEntries(Object.assign({
+      content_type: 'blog'
+    }, query))
+    .then(res => res.items);
+  }
 }

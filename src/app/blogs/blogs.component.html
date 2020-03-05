@@ -1,0 +1,43 @@
+<div class="container">
+  <h1> Blogs Page</h1>
+
+      <div class="input">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                  <label for="name">Author's Name</label>
+                  <input type="text"
+                        class="form-control"
+                        formControlName="name"
+                        placeholder="Enter name of author">
+                </div>
+          </form>
+
+        <h3 *ngIf="currentAuthor"> Authored by {{currentAuthor}}</h3>
+      <div class="wrapper">
+          <div class="author">           
+            <img *ngIf="currentAuthor" src="{{authorImagePath}}" alt=""> <!--picture-->
+          </div>
+          <div class="blog">
+            
+          <div class="content">
+                <ul *ngFor="let blog of blogsCollection">   
+                  
+                    <h3>{{blog.name}} <span class="date">from {{blog.created | date}}</span></h3>
+                
+                  <li>
+                    Title: {{blog.name}}
+                  </li>
+                  <li>
+                    {{blog.description}}
+                  </li>
+                  <li class="bodyText">
+                      {{blog.body}}
+                  </li>
+                  <hr *ngIf="currentAuthor">
+                </ul>
+               
+            </div> 
+          </div>       
+      </div>
+</div>
+

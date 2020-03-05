@@ -11,15 +11,26 @@ import { Entry } from 'contentful';
 export class FlightsListComponent implements OnInit {
 
 flights: Entry<any>[] = [];
+x: Entry<any>[] = [];
 
   constructor(private router: Router, private contentful: ContentfulService) { }
 
   ngOnInit() {
     this.contentful.getProducts()
-    .then(flights => this.flights = flights);
+    
+    .then(fl => {  
+      this.flights = fl;
+      this.x = this.flights.filter(flight => flight.fields.departure == "Toronto" );
+      console.log(this.x)
+    })    
+    .then( ()=>console.log(this.flights));
 
-    console.log(this.flights);
+    //console.log(this.flights);   
   }
-  
-  
+
+  onClick(){
+    //console.log(this.flights);
+
+  }
+
 }
